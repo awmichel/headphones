@@ -655,6 +655,7 @@ class WebInterface(object):
                     "hpuser": headphones.HPUSER,
                     "hppass": headphones.HPPASS,
                     "cache_sizemb":headphones.CACHE_SIZEMB,
+                    "folder_permissions": headphones.FOLDER_PERMISSIONS,
                 }
             
         # Need to convert EXTRAS to a dictionary we can pass to the config: it'll come in as a string like 2,5,6,8
@@ -687,7 +688,7 @@ class WebInterface(object):
         samplingfrequency=None, encoderfolder=None, advancedencoder=None, encoderoutputformat=None, encodervbrcbr=None, encoderquality=None, encoderlossless=0, 
         delete_lossless_files=0, prowl_enabled=0, prowl_onsnatch=0, prowl_keys=None, prowl_priority=0, xbmc_enabled=0, xbmc_host=None, xbmc_username=None, xbmc_password=None, 
         xbmc_update=0, xbmc_notify=0, nma_enabled=False, nma_apikey=None, nma_priority=0, nma_onsnatch=0, synoindex_enabled=False, mirror=None, customhost=None, customport=None, 
-        customsleep=None, hpuser=None, hppass=None, preferred_bitrate_high_buffer=None, preferred_bitrate_low_buffer=None, cache_sizemb=0, **kwargs):
+        customsleep=None, hpuser=None, hppass=None, preferred_bitrate_high_buffer=None, preferred_bitrate_low_buffer=None, cache_sizemb=0, folder_permissions='0755', **kwargs):
 
         headphones.HTTP_HOST = http_host
         headphones.HTTP_PORT = http_port
@@ -791,6 +792,7 @@ class WebInterface(object):
         headphones.HPUSER = hpuser
         headphones.HPPASS = hppass
         headphones.CACHE_SIZEMB = int(cache_sizemb)
+        headphones.FOLDER_PERMISSIONS = folder_permissions
 
         # Handle the variable config options. Note - keys with False values aren't getting passed
         
